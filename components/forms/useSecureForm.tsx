@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import {useEffect, useRef, useState } from "react";
 
 export const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/[.04] px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none transition focus:border-brand-cyan/60 focus:bg-white/[.06]";
@@ -17,6 +17,11 @@ export function useSecureForm<T extends object>(endpoint: string) {
   const startedAt = useRef(Date.now());
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    startedAt.current = Date.now();
+  }, []);
+
 
   async function submit(e: React.FormEvent<HTMLFormElement>, data: T) {
     e.preventDefault();
