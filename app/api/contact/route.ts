@@ -3,7 +3,7 @@ import { z } from "zod";
 import { transporter, teamEmail, userConfirmEmail, oneLine } from "@/lib/mail";
 import { guard } from "@/lib/antibot";
 
-export const runtime = "nodejs";
+
 
 const schema = z.object({
   name: z.string().trim().min(2).max(80),
