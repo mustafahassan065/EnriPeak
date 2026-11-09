@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { CompareChart, GrowthChart, KpiCard, ProcessTimeline } from "@/components/case-study/Charts";
 import type { Compare, Growth, Phase } from "@/components/case-study/Charts";
 import DiscoveryButton from "@/components/DiscoveryButton";
@@ -673,10 +673,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               <p className="mt-1 font-heading text-xl font-bold transition-colors group-hover:text-brand-cyan">{next.title} →</p>
             </Link>
             {/* CHANGED: Background color #FFBF00 */}
-            <DiscoveryButton className="btn-amber hero-btn hero-in relative overflow-hidden px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">
-  Book a Discovery Call <ArrowUpRight size={16} />
-  <span aria-hidden="true" className="btn-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/50 blur-md" />
-</DiscoveryButton>
+            <DiscoveryButton
+            
+              className="inline-flex items-center gap-2 rounded-full bg-[#FFBF00] px-6 py-3 text-sm font-bold text-ink transition-all hover:bg-[#FFBF00]/90 hover:gap-3"
+            >
+              Start your project <ArrowRight size={18} />
+            </DiscoveryButton>
           </div>
         </div>
       </main>

@@ -300,7 +300,7 @@ function ProcessSketch({ index }: { index: number }) {
           <path d="M248 106 H428" className="pr-window-line" />
           <circle cx="259" cy="97" r="2.8" fill="#F5B84B" stroke="none" /><circle cx="269" cy="97" r="2.8" fill="#39E7EF" stroke="none" />
           <rect x="280" y="91" width="92" height="12" rx="6" className="pr-chip" />
-          <text x="288" y="100.3" className="pr-chip-t" style={{ letterSpacing: 0 }}>yourbrand.com</text>
+          <text x="288" y="100.3" className="pr-chip-t" style={{ letterSpacing: 0 }}>enripeak.com</text>
           <rect x="258" y="116" width="160" height="50" rx="5" className="pr-hero" />
           <path d="M270 130 H350 M270 140 H322" className="pr-ui-line" />
           <rect x="270" y="152" width="40" height="9" rx="3" className="pr-wire-s" />

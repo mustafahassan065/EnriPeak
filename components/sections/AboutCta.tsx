@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "@/lib/gsap";
 import DiscoveryButton from "../DiscoveryButton";
-import { ArrowUpRight } from "lucide-react";
 
 export default function AboutCta() {
   const root = useRef<HTMLElement>(null);
@@ -21,12 +20,11 @@ export default function AboutCta() {
             Have a challenge worth <span className="font-serif font-normal italic text-gradient">solving?</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/55 sm:mt-5 md:text-base">
-            Tell us what you are working toward. We&apos;ll help you explore the right web or AI solution and what it would take to make it real.
+            Tell us what you are working toward. We&apos;ll help you explore the right web or AI solution—and what it would take to make it real.
           </p>
-          <DiscoveryButton className="btn-amber hero-btn hero-in relative overflow-hidden px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">
-  Let&apos;s talk about your project <ArrowUpRight size={16} />
-  <span aria-hidden="true" className="btn-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/50 blur-md" />
-</DiscoveryButton>
+          <DiscoveryButton className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-amber px-6 py-3 font-heading text-xs font-bold text-[#171208] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_35px_rgba(245,184,75,.28)] sm:mt-9 sm:gap-3 sm:px-7 sm:py-3.5 sm:text-sm">
+            Let&apos;s talk about your project <span aria-hidden="true">↗</span>
+          </DiscoveryButton>
         </div>
       </div>
     </section>

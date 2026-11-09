@@ -6,6 +6,7 @@ import { gsap } from "@/lib/gsap";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Rocket, Users, ShieldCheck, Zap, type LucideIcon } from "lucide-react";
 
+
 const STATS: { value: number; suffix: string; label: string; icon: LucideIcon }[] = [
   { value: 30, suffix: "+", label: "Projects Delivered", icon: Rocket },
   { value: 15, suffix: "+", label: "Happy Clients", icon: Users },
@@ -207,7 +208,7 @@ export default function AboutIntro() {
           <SectionHeading eyebrow="A little about us" title={<>Built around people. <span className="font-serif font-normal italic text-gradient">Driven by possibility.</span></>} />
           <div className="about-copy mt-8 space-y-5 text-sm leading-7 text-white/65 sm:text-base md:leading-8">
             <p>EnriPeak is a digital solutions partner helping businesses turn ambitious ideas into useful, dependable technology. We bring web development and AI together to create digital experiences, intelligent workflows and products that solve real business problems.</p>
-            <p>Founded in <span className="font-semibold text-white">[ADD FOUNDING YEAR]</span>, EnriPeak works with businesses across markets and has collaborated with clients in the <span className="text-white">UK, USA, Australia, Canada, UAE, India and Pakistan</span>.</p>
+            <p>Founded in <span className="font-semibold text-white">2026</span>, EnriPeak works with businesses across markets and has collaborated with clients in the <span className="text-white">UK, USA, Australia, Canada, UAE, India and Pakistan</span>.</p>
             <p>Our work spans modern websites and web applications, AI agents, workflow automation and integrations. We approach every engagement as a partnership: understand the business first, communicate clearly throughout, and build around outcomes that matter.</p>
           </div>
           <div className="about-copy relative mt-8 grid grid-cols-2 gap-3 border-t border-white/10 pt-6 pl-4 sm:grid-cols-2 xl:grid-cols-4">
