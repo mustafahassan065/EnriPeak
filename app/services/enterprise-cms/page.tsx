@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { ArrowUpRight, ArrowRight, FileText, CheckCircle2, Globe2, Lock } from "lucide-react";
 import { gsap } from "@/lib/gsap";
+import DiscoveryButton from "@/components/DiscoveryButton";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -390,7 +391,10 @@ export default function EnterpriseCmsPage() {
                 One structured content model, clear approval workflows and role-based access — published consistently across every website and portal you run.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/#contact" className="btn-amber inline-flex items-center gap-2">Book a discovery call <ArrowUpRight size={18} /></Link>
+                <DiscoveryButton className="btn-amber hero-btn hero-in relative overflow-hidden px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">
+  Book a  Discovery Call <ArrowUpRight size={16} />
+  <span aria-hidden="true" className="btn-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/50 blur-md" />
+</DiscoveryButton>
                 <Link href="#case-study" className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold text-white/80 transition-colors hover:border-brand-cyan/40 hover:text-white">See the case study <ArrowRight size={16} /></Link>
               </div>
             </div>
@@ -563,7 +567,10 @@ export default function EnterpriseCmsPage() {
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-white/60">Tell us how many sites and teams you manage. We’ll map the content model and publishing workflow.</p>
             <div className="mt-9 flex flex-wrap justify-center gap-4">
-              <Link href="/#contact" className="btn-amber inline-flex items-center gap-2">Book a free discovery call <ArrowUpRight size={18} /></Link>
+              <DiscoveryButton className="btn-amber hero-btn hero-in relative overflow-hidden px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">
+  Book a Discovery Call <ArrowUpRight size={16} />
+  <span aria-hidden="true" className="btn-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/50 blur-md" />
+</DiscoveryButton>
               <Link href="/services" className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold text-white/80 transition-colors hover:border-brand-cyan/40 hover:text-white">Explore all services <ArrowRight size={16} /></Link>
             </div>
           </div>

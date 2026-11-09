@@ -3,9 +3,10 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
-import { TrendingUp, Bot, Mountain, Layers, CalendarClock } from "lucide-react";
+import { TrendingUp,ArrowUpRight, Bot, Mountain, Layers, CalendarClock } from "lucide-react";
 import { gsap } from "@/lib/gsap";
 import SectionHeading from "@/components/ui/SectionHeading";
+import DiscoveryButton from "../DiscoveryButton";
 import Reveal from "@/components/ui/Reveal";
 
 const PRINCIPLES = [
@@ -336,9 +337,10 @@ export default function Philosophy() {
 
       {/* ---------- only the button ---------- */}
       <Reveal className="flex justify-center px-4 pb-20 pt-8 sm:px-6 sm:pb-28 sm:pt-14">
-        <Link href="/#contact" className="btn-amber inline-flex items-center justify-center px-6 py-3.5 text-sm sm:px-10 sm:py-5 sm:text-lg">
-          <CalendarClock size={20} className="mr-2" /> Book a Free Discovery Call
-        </Link>
+       <DiscoveryButton className="btn-amber hero-btn hero-in relative overflow-hidden px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">
+  Book a Discovery Call <ArrowUpRight size={16} />
+  <span aria-hidden="true" className="btn-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/50 blur-md" />
+</DiscoveryButton>
       </Reveal>
     </section>
   );

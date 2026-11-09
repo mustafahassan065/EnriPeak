@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { ArrowUpRight, Rocket, Users, ShieldCheck, Zap, type LucideIcon } from "lucide-react";
 import { gsap } from "@/lib/gsap";
 import SummitBanner from "./SummitBanner";
+import DiscoveryButton from "../DiscoveryButton";
 
 const PeakOrbit = dynamic(() => import("./PeakOrbit"), { ssr: false });
 
@@ -193,10 +194,10 @@ export default function Hero() {
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3 sm:mt-9 sm:gap-4">
-            <Link href="/#contact" className="btn-amber hero-btn hero-in relative overflow-hidden px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">
-              Free Discovery Call <ArrowUpRight size={16} />
-              <span aria-hidden="true" className="btn-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/50 blur-md" />
-            </Link>
+            <DiscoveryButton className="btn-amber hero-btn hero-in relative overflow-hidden px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">
+  Free Discovery Call <ArrowUpRight size={16} />
+  <span aria-hidden="true" className="btn-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/50 blur-md" />
+</DiscoveryButton>
             <Link href="/#services" className="btn-ghost hero-btn hero-in px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">Explore Services</Link>
           </div>
 

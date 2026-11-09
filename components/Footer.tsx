@@ -7,6 +7,7 @@ import { ArrowUpRight, BadgeCheck, Briefcase, CircleHelp, Globe, Info, Mail, Rou
 import { gsap } from "@/lib/gsap";
 import Reveal from "./ui/Reveal";
 import { WEB_SERVICES, AI_SERVICES } from "@/lib/data";
+import DiscoveryButton from "./DiscoveryButton";
 
 type LinkItem = { title: string; href: string; icon: LucideIcon };
 
@@ -16,7 +17,7 @@ const COMPANY: LinkItem[] = [
   { title: "Our Process", href: "/about#process", icon: Route },
   { title: "Case Studies", href: "/projects", icon: Briefcase },
   { title: "FAQs", href: "/#faq", icon: CircleHelp },
-  { title: "Contact", href: "/#contact", icon: Mail },
+  { title: "Contact", href: "/contact", icon: Mail },
 ];
 
 // Brand icons (Font Awesome 6 paths) — LinkedIn, Instagram, Facebook, TikTok only.
@@ -158,7 +159,10 @@ export default function Footer() {
           <p className="mt-3 flex items-start gap-2 text-sm text-white/55">
             <Globe size={16} className="mt-0.5 shrink-0 text-brand-cyan" /> Remote-first, working with clients worldwide.
           </p>
-          <Link href="/#contact" className="btn-amber mt-6 !px-5 !py-2.5 text-sm">Book a Call <ArrowUpRight size={16} /></Link>
+          <DiscoveryButton className="btn-amber hero-btn hero-in relative overflow-hidden px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">
+  Book a Call <ArrowUpRight size={16} />
+  <span aria-hidden="true" className="btn-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/50 blur-md" />
+</DiscoveryButton>
         </div>
       </Reveal>
 

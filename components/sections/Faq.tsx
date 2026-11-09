@@ -13,6 +13,7 @@ import {
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
+import DiscoveryButton from "../DiscoveryButton";
 
 const FAQ_GROUPS = [
   // Original FAQ data remains untouched...
@@ -201,9 +202,10 @@ export default function Faq() {
           <p className="font-heading text-lg font-bold text-white sm:text-xl">Have a project in mind?</p>
           <p className="mt-1 text-sm text-white/50">Let’s turn the questions into a clear plan.</p>
         </div>
-        <Link href="/#contact" className="btn-amber inline-flex shrink-0 items-center justify-center gap-2 px-6 py-3 font-semibold w-full sm:w-auto">
-          Book a discovery call <ArrowUpRight size={17} />
-        </Link>
+        <DiscoveryButton className="btn-amber hero-btn hero-in relative overflow-hidden px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">
+  Book a Discovery Call <ArrowUpRight size={16} />
+  <span aria-hidden="true" className="btn-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/50 blur-md" />
+</DiscoveryButton>
       </Reveal>
     </section>
   );

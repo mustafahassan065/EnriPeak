@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, BadgeCheck, ChevronDown, CircleHelp, Info, Menu, Route, Users, X, type LucideIcon } from "lucide-react";
 import Logo from "./Logo";
 import { WEB_SERVICES, AI_SERVICES } from "@/lib/data";
+import DiscoveryButton from "./DiscoveryButton";
 
 type Cat = "web" | "ai";
 type Menu = "offer" | "company" | null;
@@ -121,13 +122,14 @@ export default function Navbar() {
           </div>
 
           <Link href="/projects" className={linkCls}>Case Studies</Link>
-          <Link href="/#contact" className={linkCls}>Contact</Link>
+          <Link href="/contact" className={linkCls}>Contact</Link>
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Link href="/#contact" className="btn-amber !px-5 !py-2.5 text-sm">
-            Free Discovery Call <ArrowUpRight size={16} />
-          </Link>
+          <DiscoveryButton className="btn-amber hero-btn hero-in relative overflow-hidden px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">
+  Free Discovery Call <ArrowUpRight size={16} />
+  <span aria-hidden="true" className="btn-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/50 blur-md" />
+</DiscoveryButton>
         </div>
 
         <button className="grid h-10 w-10 place-items-center rounded-lg border border-white/15 lg:hidden" onClick={() => setMobile(true)} aria-label="Open menu">
@@ -210,9 +212,10 @@ export default function Navbar() {
             <p className="relative text-xs font-semibold uppercase tracking-[0.2em] text-brand-cyan">Let&apos;s talk_</p>
             <p className="relative mt-3 font-heading text-2xl font-extrabold leading-tight">Not sure where to start?</p>
             <p className="relative mt-2 text-sm text-white/60">Book a free 15-minute call. No sales pitch.</p>
-            <Link href="/#contact" onClick={() => setMega(false)} className="btn-amber relative mt-5 !py-2.5 text-sm w-full justify-center">
-              Book a call <ArrowUpRight size={16} />
-            </Link>
+            <DiscoveryButton className="btn-amber hero-btn hero-in relative overflow-hidden px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">
+  Free Discovery Call <ArrowUpRight size={16} />
+  <span aria-hidden="true" className="btn-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/50 blur-md" />
+</DiscoveryButton>
           </div>
         </div>
       </div>
@@ -383,14 +386,15 @@ export default function Navbar() {
           </div>
 
           <Link href="/#work" onClick={() => setMobile(false)} className="border-b border-white/10 py-4 text-xl font-bold">Peak Stories</Link>
-          <Link href="/#contact" onClick={() => setMobile(false)} className="border-b border-white/10 py-4 text-xl font-bold">Contact</Link>
+          <Link href="/contact" onClick={() => setMobile(false)} className="border-b border-white/10 py-4 text-xl font-bold">Contact</Link>
         </nav>
 
         {/* bottom call-to-action */}
         <div className="border-t border-white/10 p-6">
-          <Link href="/#contact" onClick={() => setMobile(false)} className="btn-amber w-full justify-center">
-            Free Discovery Call <ArrowUpRight size={18} />
-          </Link>
+          <DiscoveryButton className="btn-amber hero-btn hero-in relative overflow-hidden px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">
+  Free Discovery Call <ArrowUpRight size={16} />
+  <span aria-hidden="true" className="btn-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/50 blur-md" />
+</DiscoveryButton>
         </div>
       </div>
     </header>
