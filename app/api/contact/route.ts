@@ -9,7 +9,7 @@ const schema = z.object({
   name: z.string().trim().min(2).max(80),
   email: z.string().trim().email().max(120),
   phone: z.string().trim().max(25).regex(/^[0-9+()\-\s]*$/, "Invalid phone").optional().or(z.literal("")),
-  service: z.enum(["Web Development", "AI Solutions"]),
+  service: z.enum(["Web Development", "AI Solutions", "Both"]),
   note: z.string().trim().max(1500).optional().or(z.literal("")),
 });
 
