@@ -3,11 +3,10 @@
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, CalendarClock } from "lucide-react";
 import { gsap } from "@/lib/gsap";
 import SectionHeading from "@/components/ui/SectionHeading";
 import DiscoveryButton from "../DiscoveryButton";
-
 
 const PROJECTS = [
   {
@@ -241,10 +240,7 @@ export default function Work() {
               <p className="mt-3 max-w-sm text-sm text-white/60 sm:mt-4 sm:text-base">Explore every project in detail — the problem, the solution and the result behind each one.</p>
               <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
                 <Link href="/projects" className="btn-amber inline-flex justify-center w-full sm:w-auto">View More Projects <ArrowUpRight size={18} /></Link>
-                <DiscoveryButton className="btn-amber hero-btn hero-in relative overflow-hidden px-5 py-3 text-sm opacity-0 sm:px-6 sm:py-3.5 sm:text-base">
-  Book a Call <ArrowUpRight size={16} />
-  <span aria-hidden="true" className="btn-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/50 blur-md" />
-</DiscoveryButton>
+                <DiscoveryButton className="btn-ghost inline-flex justify-center w-full sm:w-auto">Schedule a Call <ArrowUpRight size={18} /></DiscoveryButton>
               </div>
             </div>
           </div>
