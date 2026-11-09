@@ -3,8 +3,6 @@ import { z } from "zod";
 import { transporter, teamEmail, userConfirmEmail, oneLine } from "@/lib/mail";
 import { guard } from "@/lib/antibot";
 
-
-
 const schema = z.object({
   name: z.string().trim().min(2).max(80),
   email: z.string().trim().email().max(120),
@@ -23,8 +21,9 @@ export async function POST(req: NextRequest) {
   const d = parsed.data;
 
   try {
+    // 1) Admin/team mail — must succeed
     await transporter.sendMail({
-      from: `"EnriPeak Website" <${process.env.SMTP_USER}>`,
+      from: `"EnriPeak Website" <info@enripeak.com>`,
       to: process.env.MAIL_TO,
       replyTo: oneLine(d.email),
       subject: `New enquiry (${d.service}): ${oneLine(d.name)}`,
@@ -32,15 +31,19 @@ export async function POST(req: NextRequest) {
         ["Name", d.name], ["Email", d.email], ["Phone", d.phone || ""], ["Service", d.service], ["Note", d.note || ""],
       ]),
     });
-    // user ko confirmation (fail ho to bhi request fail nahi hogi)
-    transporter
-      .sendMail({
-        from: `"EnriPeak" <${process.env.SMTP_USER}>`,
+
+    // 2) User confirmation — awaited so it actually sends before response ends,
+    //    but wrapped in try/catch so a failure doesn't fail the whole request.
+    try {
+      await transporter.sendMail({
+        from: `"EnriPeak" <info@enripeak.com>`,
         to: d.email,
         subject: "We received your message – EnriPeak",
         html: userConfirmEmail(d.name),
-      })
-      .catch((e) => console.error("confirm mail error", e));
+      });
+    } catch (e) {
+      console.error("confirm mail error", e);
+    }
 
     return NextResponse.json({ ok: true });
   } catch (e) {
